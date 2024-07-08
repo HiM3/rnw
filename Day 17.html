@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+    <style>
+        input{
+            margin-left: 50px;
+        }
+        input:focus{
+            background-color: yellow;
+            color: red;
+            outline: 2px;
+        }
+        button:focus{
+            /* box-shadow:inset 2px 2px 2px 2px blue; */
+            box-shadow: 2px 2px 2px 2px black;
+        }
+        a:focus{
+            background-color: aqua;
+            text-decoration: none;
+            font-size: 50px;
+            font-style: italic;
+        }
+        .container{
+            background-color: cadetblue;
+            height: 500px;
+        }
+        .box{
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            /* transition-timing-function: ease-in-out;
+            transition-duration: 5s;
+            transition-delay: 2s;
+            transition-property: transform,background-color; */
+            /* transition-behavior: calc(50px); */
+            transition: all 4s ease-in-out 1s;
+        }
+        .move::after{
+            transform: translateX(500px) translateY(200px) scale(2);
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter Name....">
+    <button>Click me</button>
+    <a href="">home</a>
+    <div class="container">
+        <div class="box move"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-11 practical</title>
+    <style>
+        .transform{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            display: inline-block;
+            margin: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .scale{
+            background-color: aqua;
+            transform: scale(1.5);
+        }
+        .rotate{
+            background-color: yellow;
+            transform: rotate(45deg);
+        }
+        .skew{
+            background-color: red;
+            transform: skew(30deg, 20deg);
+        }
+        .translate{
+            background-color: green;
+            transform: translate(50px, 20px);
+        }
+        .container{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: chartreuse;
+            position: relative;
+            /* margin: 400px; */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        .container1{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            /* margin: 5px; */
+            position: fixed;
+            top: 25px;
+            left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- scale,rotate,skew,translate -->
+     <div class="transform scale">Scale</div>
+     <div class="transform rotate">rotate</div>
+     <div class="transform skew">skew</div>
+     <div class="transform translate">translate</div>
+     <div class="container">
+        <div class="container1">
+        </div>
+     </div>
+     <p>lorem50000</p>
+</body>
+</html>

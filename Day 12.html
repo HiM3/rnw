@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day -12 CSS</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box1{
+            background-color: aqua;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-left: 100px;
+        }
+        .box2{
+            background-color: blueviolet;
+            position: absolute;
+            top: 500px;
+            right: 500px;
+            /* margin-left: 50px; */
+        }
+        .box3{
+            background-color: chartreuse;
+            position: absolute;
+            z-index: 3;
+        }
+        .box4{
+            background-color: crimson;
+            position: absolute;
+            z-index: 2;
+        }
+        .box5{
+            background-color: darkblue;
+            position: absolute;
+            margin-left: 50px;
+        }
+        .box6{
+            background-color: darkgreen;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+    </div>
+    <div class="box box6">box 6</div>
+</body>
+</html>

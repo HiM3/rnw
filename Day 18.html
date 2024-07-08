@@ -1,0 +1,97 @@
+<!-- Small Screen,desktop,tablet,big desktop 
+ Mobile:up to 600px
+ tablet: 600px to 900px
+ desktop: 900px t0 1200px
+ large desktop: 1200px and above-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-18</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar{
+            display: flex;
+            background-color: hotpink;
+            justify-content: space-between;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            padding-top: 4px;
+            margin-left: 100px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .nav-menu ul{
+            display: flex;
+            /* margin-top: 0px; */
+            /* margin-bottom: 0px; */
+            margin: 0px 200px;
+            line-height: 100px;
+        }
+        .nav-menu li{
+            list-style: none;
+            margin-left: 20px;
+        }
+        /* <!-- Mobile --> */
+     /* @media(max-width(600px)){
+
+     } */
+    /* <!-- Tablet   --> */
+     @media (min-width:601px) and (max-width: 900px){
+        .navbar{
+            flex-direction: column;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        .nav-menu ul{
+            /* display: flex; */
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+     }
+    /* <!-- Desktop --> */
+     @media (min-width:901px) and (max-width: 1200px){
+
+     }
+    /* <!-- Large Desktop --> */
+     @media (min-width:1201px){
+
+     }
+    </style>
+</head>
+<body>
+    <!-- Mobile -->
+     <!-- @media(max-width(600px)) -->
+    <!-- Tablet   -->
+     <!-- @media (min-width:601px) and (max-width: 900px) -->
+    <!-- Desktop -->
+     <!-- @media (min-width:901px) and (max-width: 1200px)-->
+    <!-- Large Desktop -->
+     <!-- @media (min-width:1201px) -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="jew5-1-removebg.png" alt="logo">
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li>home</li>
+                <li>about us</li>
+                <li>contact us</li>
+                <li>service</li>
+                <li>page</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
