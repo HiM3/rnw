@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    </script>
 </head>
 <body>
-    <form action="">
+    <form action="" id="signup">
         <fieldset>
             <legend>Sign up form</legend>
             <div>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <input type="text" name="name" id="name" placeholder="Enter your name" >
             </div>
             <div>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <input type="text" name="name" id="name" placeholder="Enter your name" >
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <input type="email" name="email" id="email" placeholder="Enter your email" >
             </div>
             <div>
                 <label for="Address">Address</label>
-                <input type="address" name="address" id="address" placeholder="Enter your address">
+                <input type="address" name="address" id="address" placeholder="Enter your address" >
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter your password">
+                <input type="password" name="password" id="password" placeholder="Enter your password" >
             </div>
             <div>
                 <label for="confirm_password">Confirm Password</label>
-                <input type="password" name="confirm_password" id="confirm_password" placeholder="Enter">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Enter" >
             </div>
             <div>
                 <input type="submit" value="Submit">
@@ -40,7 +42,17 @@
         </fieldset>
     </form>
     <script>
-
+        $(document).ready(function(){
+            $('#signup').validator({
+                rules: {
+                    name: "required",
+                    email: "required",
+                    address: "required",
+                    password: "required",
+                    confirm_password: "required",
+                    },
+            });
+        })
     </script>
 </body>
 </html>
