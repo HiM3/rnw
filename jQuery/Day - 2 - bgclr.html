@@ -9,6 +9,10 @@
 <body>
     <!-- Mouse Event -->
      <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, maiores?</p>
+     <input type="text" name="keyboard event" id="kyev">
+     <p class="par"></p>
+     <p class="par1"></p>
+     <p class="par2"></p>
      <script>
         $(document).ready(function(){
             $('.para').mouseenter(()=> {
@@ -16,6 +20,15 @@
             })
             $('.para').mouseleave(()=> {
                 $('.para').css({'color' : 'black', 'background-color' : 'white'});
+            })
+            $('#kyev').keypress(()=> {
+                $('.par').text('Key Press');
+            })
+            $('#kyev').keydown(()=> {
+                $('.par1').text('key down');
+            })
+            $('#kyev').keyup(()=> {
+                $('.par2').text('key up');
             })
         })
      </script>
