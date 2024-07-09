@@ -10,6 +10,8 @@
     <!-- Mouse Event -->
      <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, maiores?</p>
      <h1 class="h1-1"></h1>
+     <p class="mpara"></p>
+     <p class="dbpara"></p>
      <script>
         $(document).ready(function(){
             $('.para').mouseenter(()=> {
@@ -26,6 +28,18 @@
             })
             $('.para').mouseup(()=>{
                 $('.h1-1').text("Mouse Up");
+            })
+            $('.para').mousemove(()=>{
+                $('.mpara').text("Mouse move");
+            })
+            $('.para').mouseout(()=>{
+                $('.mpara').text("Mouse out");
+            })
+            $('.para').mouseover(()=>{
+                $('.mpara').text("Mouse over");
+            })
+            $('.para').dblclick(()=>{
+                $('.dbpara').text("Double Click");
             })
         })
      </script>
