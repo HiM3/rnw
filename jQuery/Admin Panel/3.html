@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ======= Styles ====== -->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
      <style>
@@ -480,6 +481,46 @@ body {
   }
 }
      </style>
+     <style>
+      .msg{
+        /* border: 1px solid black;
+        height: 100%;
+        width: 500px;
+        display: flex;
+        margin-top: 200px;
+        margin-right: 70%; */
+        position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+      }
+      button{
+        background-color: #e4e411;
+        color: white;
+      }
+      .main1 {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+  .main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+.msges{
+  position: relative;
+  width: 70%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+}
+     </style>
 </head>
 
 <body>
@@ -562,7 +603,7 @@ body {
         </div>
 
         <!-- ========================= Main ==================== -->
-        <div class="main">
+         <div class="main">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
@@ -575,12 +616,12 @@ body {
                     </label>
                 </div>
 
-                <div class="user">
+                <!--<div class="user">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZCldKgmO2Hs0UGk6nRClAjATKoF9x2liYYA&s" alt="">
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
+            ======================= Cards ==================
             <div class="cardBox">
                 <div class="card">
                     <div>
@@ -627,7 +668,7 @@ body {
                 </div>
             </div>
 
-            <!-- ================ Order Details List ================= -->
+            ================ Order Details List =================
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -705,7 +746,7 @@ body {
                     </table>
                 </div>
 
-                <!-- ================= New Customers ================ -->
+                ================= New Customers ================
                 <div class="recentCustomers">
                     <div class="cardHeader">
                         <h2>Recent Customers</h2>
@@ -784,11 +825,29 @@ body {
                             </td>
                         </tr>
                     </table>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div>
         </div>
+    </div> -->
+    <div class="msg">
+      <div class="msging-side">
+        <div class="msging-side-left">
+          <div class="msging-side-left-top">
+            <h1>Messages</h1>
+          </div>
+          <div class="msging-side-right-top">
+            <button><i class="fa-solid fa-pen-to-square"></i>NEW</button>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <div class="mesges">
+      <div class="name">
+        <h1>Denice EkdHI</h1>
+        <p>online * last message on 10 seconds ago</p>
+      </div>
+    </div>
+    
     <!-- =========== Scripts =========  -->
     <!-- <script src="assets/js/main.js"></script> -->
      <script>
