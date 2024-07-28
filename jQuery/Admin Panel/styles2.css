@@ -6,7 +6,7 @@
   --dark-BG: #001623;
   --content-BG: #022d47;
   --dark-text: #b200ff;
-  --off-white: #f1f5f9;
+  --off-white: #101010;
   --icon-color: #520293;
   --purple: linear-gradient(45deg, #99013e, #7f02ed);
   --pink: linear-gradient(45deg, #770233, #ff0066);
@@ -15,7 +15,7 @@
   --moon-only: linear-gradient(45deg, #fff, #7f02ed);
   --sun: linear-gradient(45deg, #ffc700, #8300ff);
   --transition: all 400ms;
-  --new-content: rgba(255, 255, 255, .5);
+  --new-content: rgba(12, 12, 12, 0.996);
   --indicator: rgba(255, 255, 255,.7)
 }
 
@@ -74,7 +74,7 @@ body {
   height: 60px;
   border-radius: 30px;
   transition: var(--transition);
-  box-shadow: 0 0 0 5px rgba(183, 204, 235, 0.378);
+  box-shadow: 0 0 0 5px rgba(253, 14, 1, 0.971);
   overflow: hidden;
 }
 
@@ -226,7 +226,7 @@ body.light .search.active {
   height: 60px;
   border-radius: 50px;
   backdrop-filter: blur(6px);
-  box-shadow: inset 0 5px 6px rgb(0 0 0 / 27%), inset 0 3px 6px rgb(0 0 0 / 6%), inset 0 -5px 6px rgb(0 0 0 / 21%);
+  box-shadow: inset 0 5px 6px rgba(253, 3, 3, 0.979), inset 0 3px 6px rgb(0 0 0 / 6%), inset 0 -5px 6px rgb(0 0 0 / 21%);
   cursor: pointer;
   transition: var(--transition);
 }
@@ -247,7 +247,7 @@ body.light .search.active {
 #dashboard:hover,
 #kleenpulse:hover {
   text-transform: uppercase;
-  background: linear-gradient(-140deg, #fff, #0ff, #ff004c, #ffcc00, #0ff);
+  background: linear-gradient(-140deg, #0c0c0c, #0ff, #ff004c, #ffcc00, #0ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 200%;
@@ -456,9 +456,9 @@ body.light .card-header button:hover {
   left: 0;
   top: 0;
   height: 100%;
-  background: rgba(0, 0, 0, .2);
+  background: rgb(251, 4, 4);
   backdrop-filter: blur(6px);
-  box-shadow: 5px 0 10px rgba(0, 0, 0, .3);
+  box-shadow: 5px 0 10px rgb(253, 252, 252);
   z-index: 100;
   transition: width 300ms;
 }
@@ -507,7 +507,7 @@ body.light .card-header button:hover {
   padding-top: .7rem;
   padding-bottom: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.62);
-  background: rgba(0, 0, 0, .2);
+  background: rgb(249, 247, 247);
   backdrop-filter: blur(6px);
   border-radius: 30px 0 0 30px;
 }
@@ -560,7 +560,7 @@ body.light .card-header button:hover {
 .main-content {
   transition: margin-left 300ms;
   margin-left: 250px;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(255, 254, 254, 0.981);
 }
 
 /* ====GLASSMORPHISM CHANGE HERE!==== */
@@ -585,7 +585,7 @@ header {
 
 /* ====GLASSMORPHISM CHANGE HERE!==== */
 header h2 {
-  color: #fff;
+  color: #0f0f0f;
   text-transform: uppercase;
 }
 
@@ -595,7 +595,7 @@ header label span {
 }
 
 .search-wrapper {
-  border: 1px solid #ccc;
+  border: 1px solid #121111;
   border-radius: 30px;
   height: 50px;
   display: flex;
@@ -616,7 +616,7 @@ header label span {
 }
 
 input {
-  color: #fff;
+  color: #080808;
   font-size: 15px;
 }
 
@@ -643,13 +643,13 @@ input {
 }
 
 .user-wrapper div h4 {
-  color: #fff;
+  color: #0a0a0a;
 
 }
 
 .user-wrapper small {
   display: inline-block;
-  color: #e0e0e0;
+  color: #090909;
 }
 
 body.light h4 {
@@ -671,7 +671,7 @@ main {
 /* ====GLASSMORPHISM CHANGE HERE!==== */
 .heading {
 
-  color: #fff;
+  color: #0e0e0e;
 }
 
 body.light .heading {
@@ -725,7 +725,7 @@ body.light .heading {
 
 .card-single div:first-child span {
   text-transform: uppercase;
-  color: #fff;
+  color: #070707;
 }
 
 .card-single:hover,
