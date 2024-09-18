@@ -1,0 +1,21 @@
+var a=10;
+var b=20;
+console.log("Value of a before swap",a);
+console.log("Value of b before swap",b);
+var c;
+c=a;
+a=b;
+b=c;
+console.log("Value of a after swap",a);
+console.log("Value of b after swap",b);
+
+document.write("Second method of swap","<br>");
+var a=10;
+var b=20;
+document.write("Value of a before swap",a,"<br>");
+document.write("Value of b before swap",b,"<br>");
+a=a+b;
+b=a-b;
+a=a-b;
+document.write("Value of a after swap",a,"<br>");
+document.write("Value of b after swap",b,"<br>");
