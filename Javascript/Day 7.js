@@ -22,15 +22,15 @@ function table(){
 // console.clear();
 
 //while loop
-function table(){
-    // let n=document.getElementById("no1").value;
-    let n=document.getElementById("no1").value;
-    i=1;
-    while(i<=10)
-    {
-        ans = n*i;
-        document.write(n+"*"+i+"="+ans,"<br>");
-        i++;
-    }
-    return false;
-}
+// function table(){
+//     // let n=document.getElementById("no1").value;
+//     let n=document.getElementById("no1").value;
+//     i=1;
+//     while(i<=10)
+//     {
+//         ans = n*i;
+//         document.write(n+"*"+i+"="+ans,"<br>");
+//         i++;
+//     }
+//     return false;
+// }
