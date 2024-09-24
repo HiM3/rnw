@@ -17,6 +17,12 @@ function table(){
         ans = n*i;
         console.log(n+"*"+i+"="+ans);
     }
+    i=1;
+    while(i<=10){
+        ans=n*i;
+        document.write(n+"*"+i+"="+ans,"<br>");   
+        i++;
+       }
     return false;
 }
 // console.clear();
