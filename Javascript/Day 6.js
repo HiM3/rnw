@@ -1,4 +1,4 @@
-var old_password = "dhwanit";
+var old_password = "meet";
         var password = prompt("Enter your Password:");
        if(password !=""){
             if(old_password == password){
