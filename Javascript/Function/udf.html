@@ -8,15 +8,18 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">User Course Form</h2>
         <form onsubmit="showDetails(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name">
             </div>
             <div class="form-group">
                 <label for="course">Course:</label>
-                <input type="text" id="course" class="form-control" placeholder="Enter your course" required>
+                <input type="text" id="course" class="form-control" placeholder="Enter your course">
+            </div>
+            <div class="form-group">
+                <label for="location">location:</label>
+                <input type="text" id="location" class="form-control" placeholder="Enter your location">
             </div>
             <button class="btn btn-primary btn-block">Submit</button>
         </form>
@@ -27,7 +30,8 @@
             event.preventDefault();
             var name = document.getElementById("name").value;
             var course = document.getElementById("course").value;
-            var output = "Hello, " + name + "! Your course is " + course + ".";
+            var location = document.getElementById("location").value;
+            var output = `hello ${name}, welcome to our company your course is ${course} and location is ${location}`;
             document.getElementById("output").innerHTML = output;
         }
     </script>
