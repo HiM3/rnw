@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="col-lg-8 mx-auto p-5 my-5 shadow text-center">
+        <p id="quotes">Click the button to see a random quote</p>
+        <button class="btn btn-info" onclick="ShowQuotes()">Show Quotes</button>
+     </div>
+  
+    <script>
+        function ShowQuotes(){
+            const Quotes=[
+                "The only limit to our realization of tomorrow is our doubts of today. — Franklin D. Roosevelt",
+                "In the middle of every difficulty lies opportunity. — Albert Einstein",
+                "Success is not final, failure is not fatal: It is the courage to continue that counts. — Winston Churchill",
+                "Your time is limited, so don't waste it living someone else's life. — Steve Jobs",
+                "Believe you can and you're halfway there. — Theodore Roosevelt",
+                "The best way to predict the future is to create it. — Peter Drucker",
+                "Happiness is not something ready-made. It comes from your own actions. — Dalai Lama",
+                "Do what you can, with what you have, where you are. — Theodore Roosevelt",
+                "The only way to do great work is to love what you do. — Steve Jobs",
+                "Life is what happens when you're busy making other plans. — John Lennon",
+        ];
+            const randomindex = Math.floor(Math.random() * Quotes.length);
+            const randomQuote = Quotes[randomindex];
+            document.getElementById("quotes").innerHTML=randomQuote;
+
+        }
+    </script>
+</body>
+</html>
