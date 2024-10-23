@@ -1,0 +1,20 @@
+
+<script>
+    document.getElementById('generate-bill').addEventListener('click', function() {
+        if (orderItems.length === 0) {
+            alert('No items in the order!');
+            return;
+        }
+        let billDetails = 'Your Order:\n';
+        orderItems.forEach(item => {
+        billDetails += `${item.name} - ₹${item.price.toFixed(2)}\n`;
+        });
+        billDetails += `\nTotal Amount: ₹${document.getElementById('total-amount').innerText}`;
+        alert(billDetails);
+    });
+</script>
+
+
+
+
+
