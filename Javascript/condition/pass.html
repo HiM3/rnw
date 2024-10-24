@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="pass" placeholder="Enter Password">
+    <button type="button" onclick="checkPassword()">Submit</button>
+    <script>
+        const correctpass = "123456";
+        function checkPassword() {
+        var currentpass = document.getElementById("pass").value;
+        if (currentpass === correctpass) {
+            document.write("Password is correct");
+        } else {
+            document.write("Incorrect Password");
+        }
+    }
+    </script>
+</body>
+</html>
