@@ -44,8 +44,8 @@
             document.getElementById('max').innerText = max;
             const min = Math.min(...arr1);
             document.getElementById('min').innerText = min;
-            const evenNumbers = arr1.filter(num => num % 2 == 0);
-            const oddNumbers = arr1.filter(num => num % 2 != 0);
+            const evenNumbers = arr1.filter((num) => num % 2 == 0);
+            const oddNumbers = arr1.filter((num) => num % 2 != 0);
             document.getElementById('evenNumbers').innerText = `[${evenNumbers.join(', ')}]`;
             document.getElementById('oddNumbers').innerText = `[${oddNumbers.join(', ')}]`;
         }
