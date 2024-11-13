@@ -3,17 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <h1 class="align-items-center text-center justify-content-center">Array Operations</h1>
+        <div class="align-items-center text-center justify-content-center">
+            <input type="text" placeholder="Add number" id="addnumber">
+            <button type="submit" onclick="addNumber()" class="btn btn-primary">Add Number</button>
+        </div>
+        <div class="align-items-center text-center justify-content-center">
+            <p>Array: <span id="arrayDisplay"></span></p>
+            <p>Total Sum: <span id="sum"></span></p>
+            <p>Average: <span id="average"></span></p>
+            <p>Maximum Value: <span id="max"></span></p>
+            <p>Minimum Value: <span id="min"></span></p>
+            <p>Even Numbers: <span id="evenNumbers"></span></p>
+            <p>Odd Numbers: <span id="oddNumbers"></span></p>
+        </div>
+    </div>
     <script>
-        const arr1=[10,12,33,95,85,56];
-        var maxvalue=Math.max(...arr1);
-        console.log(`Maximum value is ${maxvalue}`);
-        var minvalue=Math.min(...arr1);
-        console.log(`Minimum value is ${minvalue}`);
-        console.log(arr1.length);
+        const arr1=[];
+        function addNumber() {
+            const numberInput = document.getElementById('addnumber');
+            const number = parseInt(numberInput.value);
+            if (!isNaN(number)) {
+            arr1.push(number);
+            numberInput.value = '';
+            document.getElementById('arrayDisplay').innerHTML = `[${arr1.join(', ')}]`;
+            let sum=0
+            for (let i = 0; i < arr1.length; i++) {
+                sum += arr1[i];
+            }
+            document.getElementById('sum').innerText = sum;
+            const average = sum / arr1.length;
+            document.getElementById('average').innerText = average.toFixed(2);
+            const max = Math.max(...arr1);
+            document.getElementById('max').innerText = max;
+            const min = Math.min(...arr1);
+            document.getElementById('min').innerText = min;
+            const evenNumbers = arr1.filter(num => num % 2 == 0);
+            const oddNumbers = arr1.filter(num => num % 2 != 0);
+            document.getElementById('evenNumbers').innerText = `[${evenNumbers.join(', ')}]`;
+            document.getElementById('oddNumbers').innerText = `[${oddNumbers.join(', ')}]`;
+        }
+    }
     </script>
 </body>
 </html>
