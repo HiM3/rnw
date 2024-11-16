@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class A{
+            show(){
+                var i,fact=1,a=5
+                for(i=1;i<=a;i++){
+                    fact=fact*i;
+                    document.write(i+"*")
+                }
+                document.write("="+fact);
+            }
+        }
+        class B extends A{
+            show1(){
+                var a=2,b=3;
+                document.write(`<br> Before swap value of a and b ${a} ${b} <br>`);
+                a=a+b;
+                b=a-b;
+                a=a-b;
+                document.write(`After swap value of a and b ${a} ${b}`);
+            }
+        }
+        const sib = new B();
+        sib.show();
+        sib.show1();
+    </script>
+</body>
+</html>
