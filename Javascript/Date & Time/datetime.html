@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const date = new Date();
+      console.log(date.getDate());
+      console.log(date.getDate());
+      console.log(date.getDay());
+      console.log(date.getMonth());
+      console.log(date.getMonth() + 1);
+      console.log(date.getFullYear());
+      console.log(date.getHours());
+      console.log(date.getMinutes());
+      console.log(date.getSeconds());
+      console.log(date.toDateString());
+      console.log(date.toTimeString());
+      console.log(date.toLocaleDateString());
+
+      const Months = [
+        "jan",
+        "feb",
+        "mar",
+        "apr",
+        "may",
+        "jun",
+        "july",
+        "aug",
+        "sept",
+        "oct",
+        "nov",
+        "dec",
+      ];
+
+      const date1 = date.getDate();
+      const month1 = Months[date.getMonth()];
+      const year1 = date.getFullYear();
+      console.log(`${date1}-${month1}-${year1}`);
+      console.log(`${date1}/${month1}/${year1}`);
+      const result = [date1, month1, year1].join("/");
+      console.log(result);
+    </script>
+  </body>
+</html>
