@@ -51,8 +51,8 @@ register.addEventListener('submit', (event) => {
     // Email
     if (!email) {
         email_error.innerHTML = "Please enter your email";
-    } else if (!emailReg.test(email)) {
-        email_error.innerHTML = "Please enter a valid email address";
+    // } else if (!emailReg.test(email)) {
+    //     email_error.innerHTML = "Please enter a valid email address";
     } else {
         email_error.innerHTML = "";
     }
