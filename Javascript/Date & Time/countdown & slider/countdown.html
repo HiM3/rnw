@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #000;
+      }
+      .showCount {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* position: absolute; */
+        height: 100vh;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="showCount"></div>
+    <script>
+          setInterval(()=>{
+        const currDate = new Date();
+        const expireDate = new Date("2024-11-23T01:59:00Z");
+        const timeDiff = expireDate - currDate;
+        if(currDate<=expireDate){
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+        const result = `${days}d:${hours}h:${minutes}m:${seconds}s`;
+        document.querySelector(".showCount").innerHTML = result;
+      }
+        else{
+          document.querySelector(".showCount") = "Coming Soon....";
+        }},1000);
+    </script>
+  </body>
+</html>
