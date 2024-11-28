@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-6 mx-auto p-5 my-5 shadow">
+        <h1>Student Information</h1>
+        <form action="">
+            <div class="mt-4">
+                <input type="text" id="name" placeholder="Enter Your name" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <input type="text" id="email" placeholder="Enter Your email" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <input type="text" id="mobile" placeholder="Enter Your mobile number" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <input type="text" id="address" placeholder="Enter Your address" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <input type="text" id="fatherName" placeholder="Enter Your Father's Name" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <input type="text" id="fatherMobile" placeholder="Enter Your Father's mobile number"
+                    class="form-control">
+            </div>
+
+            <div class="mt-4">
+                <input type="text" id="fatherID" placeholder="Enter Your Father's email ID" class="form-control ">
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-success" type="button" onclick="show()">Submit</button>
+            </div>
+            <div id="output"></div>
+        </form>
+    </div>
+
+    <script>
+
+        class Student {
+            constructor(name, email, mobile, address) {
+                this.name = name;
+                this.email = email;
+                this.mobile = mobile;
+                this.address = address;
+            }
+        }
+
+        class Father extends Student {
+            constructor(name, email, mobile, address, Father_name, Father_mobile, Father_email) {
+                super(name, email, mobile, address);
+                this.Father_name = Father_name;
+                this.Father_mobile = Father_mobile;
+                this.Father_email = Father_email;
+            }
+
+            show() {
+                var output = `name = ${this.name} , email = ${this.email} , mobile = ${this.mobile} , address = ${this.address} , Father Name = ${this.Father_name} , Father Mobile = ${this.Father_mobile} , Father Email = ${this.Father_email}`;
+                document.getElementById("output").innerHTML = output;
+               // document.write(output);
+            }
+        }
+
+        var F = new Father()
+        F.show()
+
+
+
+        function show() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+            var fatherName = document.getElementById("fatherName").value;
+            var fatherMobile = document.getElementById("fatherMobile").value;
+            var fatherID = document.getElementById("fatherID").value;
+
+            var output=`student name is ${name},email id is ${email}, mobile number is ${mobile}
+                ,address is ${address},Father's Name is ${fatherName}, Father mobile no is ${fatherMobile}, father email id is ${fatherID}`
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
