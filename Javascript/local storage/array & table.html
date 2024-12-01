@@ -1,106 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-        span{
-            color: red;
-        }
+      span {
+        color: red;
+      }
+      #update {
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="col-lg-6 mx-auto my-5 p-5 shadow">
-        <form action="" id="register" method="post">
-            <!-- Name -->
-            <div class="mt-4">
-                <input type="text" id="name" class="form-control" placeholder="Enter name">
-                <span id="name_error"></span>
-            </div>
+      <form action="" id="register" method="post">
+        <!-- Name -->
+        <div class="mt-4">
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            placeholder="Enter name"
+          />
+          <span id="name_error"></span>
+        </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <input type="password" id="password" class="form-control" placeholder="Enter password">
-                <span id="password_error"></span>
-            </div>
+        <!-- Password -->
+        <div class="mt-4">
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter password"
+          />
+          <span id="password_error"></span>
+        </div>
 
-            <!-- Email -->
-            <div class="mt-4">
-                <input type="email" id="email" class="form-control" placeholder="Enter email">
-                <span id="email_error"></span>
-            </div>
+        <!-- Email -->
+        <div class="mt-4">
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter email"
+          />
+          <span id="email_error"></span>
+        </div>
 
-            <!-- Mobile -->
-            <div class="mt-4">
-                <input type="number" id="mobile" class="form-control mobile" placeholder="Enter mobile no.">
-                <span id="mobile_error"></span>
-            </div>
+        <!-- Mobile -->
+        <div class="mt-4">
+          <input
+            type="number"
+            id="mobile"
+            class="form-control mobile"
+            placeholder="Enter mobile no."
+          />
+          <span id="mobile_error"></span>
+        </div>
 
-            <!-- City Dropdown -->
-            <div class="mt-4">
-                <label for="city">Choose a city:</label>
-                <select id="city" name="city" class="form-control">
-                    <option value="" selected>Select your City</option>
-                    <option value="Ahmedabad">Ahmedabad</option>
-                    <option value="Surat">Surat</option>
-                    <option value="Vadodara">Vadodara</option>
-                    <option value="Gandhinagar">Gandhinagar</option>
-                    <option value="Mehsana">Mehsana</option>
-                    <option value="Bhavnagar">Bhavnagar</option>
-                    <option value="Other">Other</option>
-                </select>
-                <span id="city_error"></span>
-            </div>
+        <!-- City Dropdown -->
+        <div class="mt-4">
+          <label for="city">Choose a city:</label>
+          <select id="city" name="city" class="form-control">
+            <option value="" selected>Select your City</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+            <option value="Mehsana">Mehsana</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+            <option value="Other">Other</option>
+          </select>
+          <span id="city_error"></span>
+        </div>
 
-            <!-- Address -->
-            <div class="mt-4">
-                <textarea class="form-control" id="address" placeholder="Enter address"></textarea>
-                <span id="address_error"></span>
-            </div>
+        <!-- Address -->
+        <div class="mt-4">
+          <textarea
+            class="form-control"
+            id="address"
+            placeholder="Enter address"
+          ></textarea>
+          <span id="address_error"></span>
+        </div>
 
-            <!-- Gender -->
-            <div class="mt-4">
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label>
-                <span id="gender_error"></span>
-            </div>
+        <!-- Gender -->
+        <div class="mt-4">
+          <input type="radio" id="male" name="gender" value="Male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="female">Female</label>
+          <span id="gender_error"></span>
+        </div>
 
-            <!-- Hobbies -->
-            <div class="mt-4">
-                <label for="checkbox">Hobbies</label><br>
-                <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label><br>
-                <label><input type="checkbox" name="hobbies" value="Traveling"> Traveling</label><br>
-                <label><input type="checkbox" name="hobbies" value="Gaming"> Gaming</label><br>
-                <label><input type="checkbox" name="hobbies" value="Cooking"> Cooking</label><br>
-                <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label><br>
-                <label><input type="checkbox" name="hobbies" value="Music"> Music</label><br>
-                <label><input type="checkbox" name="hobbies" value="Other"> Other</label>
-                <span id="hobbies_error"></span>
-            </div>
+        <!-- Hobbies -->
+        <div class="mt-4">
+          <label for="checkbox">Hobbies</label><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Reading" />
+            Reading</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Traveling" />
+            Traveling</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Gaming" />
+            Gaming</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Cooking" />
+            Cooking</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Sports" />
+            Sports</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Music" /> Music</label
+          ><br />
+          <label
+            ><input type="checkbox" name="hobbies" value="Other" /> Other</label
+          >
+          <span id="hobbies_error"></span>
+        </div>
 
-            <!-- Submit Button -->
-            <div class="mt-4">
-                <input type="submit" class="btn btn-success w-100">
-            </div>
-        </form>
+        <!-- Submit Button -->
+        <div class="mt-4">
+          <!-- <input type="submit" id="submit" class="btn btn-success w-100"> -->
+          <button class="btn btn-success w-100" id="submit">Submit</button>
+          <button class="btn btn-warning w-100" id="update">Update</button>
+        </div>
+      </form>
     </div>
     <table class="table table-striped table-hover table-success">
-        <thead class="bg-dark">
-            <th>sr.no</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Gender</th>
-            <th>City</th>
-            <th>Address</th>
-        </thead>
-        <tbody id="showData"></tbody>
+      <thead class="bg-dark">
+        <th>sr.no</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>Address</th>
+      </thead>
+      <tbody id="showData"></tbody>
     </table>
     <script src="array & table.js"></script>
-</body>
+  </body>
 </html>
