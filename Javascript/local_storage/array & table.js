@@ -16,7 +16,6 @@ register.addEventListener("submit", (event) => {
   );
   // console.log(hobbies);
   // console.log(Array.from(hobbies))
-
   var selected = Array.from(hobbies).map((ele) => {
     return ele.value;
   });
@@ -69,17 +68,47 @@ function trash(index) {
 function update(index) {
   document.querySelector("#submit").style.display = "none";
   document.querySelector("#update").style.display = "block";
-  const userdata = userLocaldata[index];
+  const singleuser = userLocaldata[index];
   // console.log(userdata);
-  document.querySelector("#name").value = userdata.name;
-  document.querySelector("#email").value = userdata.email;
-  document.querySelector("#mobile").value = userdata.mobile;
-  document.querySelector("#city").value = userdata.city;
-  document.querySelector("#address").value = userdata.address;
-  document.querySelector("#register input[type='radio']:checked").value =
-    userdata.gender;
-  document.querySelector("#register input[type='checkbox']:checked").value =
-    userdata.hobbies;
+  document.querySelector("#name").value = singleuser.name;
+  document.querySelector("#email").value = singleuser.email;
+  document.querySelector("#mobile").value = singleuser.mobile;
+  document.querySelector("#city").value = singleuser.city;
+  document.querySelector("#address").value = singleuser.address;
+  const genderRadios = document.querySelectorAll(
+    "#register input[name='gender']"
+  );
+  genderRadios.forEach((radio) => {
+    radio.checked = radio.value === singleuser.gender;
+  });
+  const hobbiescheckbox = document.querySelectorAll(
+    "#register input[name='hobbies']"
+  );
+  hobbiescheckbox.forEach((checkbox) => {
+    checkbox.checked = singleuser.hobbies.includes(checkbox.value);
+  });
+  // document.querySelector("#register input[type='checkbox']:checked").value =
+  // singleuser.hobbies;
   // showData();
+  const update = document.querySelector("#update");
+  update.addEventListener("click", () => {
+    const obj = {
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      mobile: document.querySelector("#mobile").value,
+      city: document.querySelector('#city').value,
+      address: document.querySelector("#address").value,
+      gender: document.querySelector(
+        "#register input[type='radio']:checked"
+      ).value,
+      hobbies: document.querySelector(
+        "#register input[type='checkbox']:checked"
+      ).value
+    };
+    userLocaldata.splice(index, 1, obj);
+    localStorage.setItem("userdata", JSON.stringify(userLocaldata));
+    alert("Data updated");
+    location.reload();
+  });
 }
-showData();
+// showData();
