@@ -1,33 +1,58 @@
-const product_details = document.querySelector('#proudct_details')
-const jsonlocaldata = JSON.parse(localStorage.getItem('prdo'));
-product_details.addEventListener('submit', (event) => {
+const jsonlocaldata = JSON.parse(localStorage.getItem("prdo")) || [];
+productdetails.addEventListener("submit", (event) => {
     event.preventDefault();
-    const name = document.querySelector('#pname').value;
-    const price = document.querySelector('#pprice').value;
-    const description = document.querySelector('#pdesc').value;
-    const category = document.querySelector('#categoru').value;
-
+    const name = document.querySelector("#pname").value;
+    const price = document.querySelector("#pprice").value;
+    const description = document.querySelector("#pdesc").value;
+    const img = document.querySelector("#pimg").value;
+    const category = document.querySelector("#category").value;
+    const id = jsonlocaldata.length + 1;
     const product = {
+        id,
         name,
         price,
         description,
-        category
-    }
-
-    function showdata() {
-        const prdo = jsonlocaldata;
-        let order = '';
-        prdo.forEach((element) => {
-            order += `<div class="col-md-4">
-                    <div class="card menu-item">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIsulnC4e9gluSPnw9CMsqNWvfm86nMXiBQQ&s" class="card-img-top" height="300" alt="Pizza">
-                        <div class="card-body">
-                            <h5 class="card-title">Pizza</h5>
-                            <p class="card-text">₹${element.price}</p>
-                            <button class="btn btn-primary add-to-order" data-name="Pizza" data-price="70">Add to Order</button>
-                        </div>
+        img,
+        category,
+    };
+    jsonlocaldata.push(product);
+    localStorage.setItem("prdo", JSON.stringify(jsonlocaldata));
+    alert("Product added successfully!");
+    location.reload();
+});
+function showdata() {
+    const prdo = jsonlocaldata;
+    let order = "";
+    prdo.forEach((element) => {
+        order += `<div class="col-md-6 col-xl-3 col-lg-4 mt-4 shadow">
+                <div class="card">
+                    <img src="${element.img}" class="card-img-top" height="300" alt="">
+                    <h5 class="card-title">${element.name}</h5>
+                    <div class="card-body">
+                        <p class="card-text">₹${element.price}</p>
+                        <p class="card-body">${element.description}</p>
+                        <button class="btn btn-primary" onclick="addtocart(${element.id})">Add to Order</button>
                     </div>
-                </div>`
-        });
+                </div>
+            </div>`;
+    });
+    document.querySelector("#showdata").innerHTML = order;
+}
+showdata();
+
+function addtocart(id) {
+    const cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+    const prdo = jsonlocaldata.find((element) => {
+        return element.id == id;
+    });
+    const exists = cartlist.find((element) => {
+        return element.id == id;
+    });
+    if (exists) {
+        exists.count += 1;
+    } else {
+        cartlist.push({ ...prdo, count: 1 });
     }
-})
+    localStorage.setItem("cartlist", JSON.stringify(cartlist));
+    alert("Product added to cart!");
+}

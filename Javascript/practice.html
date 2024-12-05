@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      arr = [
+        {
+          id: 123,
+          name: "Meet",
+        },
+        {
+          id: 121,
+          name: "Dhruv",
+        },
+      ];
+      const a = arr.filter((arr) => {
+        return arr.id == 121;
+      });
+      const b = arr.find((arr) => {
+        return arr.id == 121;
+      });
+      console.log(a);
+      console.log(a[0]);
+      console.log(b);
+    </script>
+  </body>
+</html>
