@@ -15,6 +15,7 @@ productdetails.addEventListener("submit", (event) => {
         img,
         category,
     };
+
     jsonlocaldata.push(product);
     localStorage.setItem("prdo", JSON.stringify(jsonlocaldata));
     alert("Product added successfully!");
@@ -55,4 +56,41 @@ function addtocart(id) {
     }
     localStorage.setItem("cartlist", JSON.stringify(cartlist));
     alert("Product added to cart!");
+    updatecart();
+}
+
+function updatecart() {
+    const cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+    let order = "";
+    cartlist.forEach((element, index) => {
+        order += `
+        <div class="row mt-5">
+            <div class="col-lg-3">
+                <img src="${element.img}" alt="" style="max-width: 100%;">
+            </div>
+            <div class="col-lg-9">
+                <h3>${element.name}</h3>
+                <ul>
+                    <li>Quantity: ${element.count}</li>
+                    <li>Price: ₹${element.price}</li>
+                    <li>Description: ${element.description}</li>
+                </ul>
+                <button class="btn btn-danger" onclick="removecart(${index})">Remove</button>
+            </div>
+        </div>`;
+    });
+    document.querySelector('#updatecart').innerHTML = order;
+}
+updatecart();
+
+function removecart(index) {
+    const cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+    if (confirm("Do you want to delete this item?")) {
+        cartlist.splice(index, 1);
+        localStorage.setItem("cartlist", JSON.stringify(cartlist));
+        alert("Item deleted!");
+        updatecart();
+    } else {
+        alert("Item not deleted.");
+    }
 }
