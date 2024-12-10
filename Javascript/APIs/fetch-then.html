@@ -34,14 +34,13 @@
         if (imageCount <= 0) {
           document.querySelector("#showdata").innerHTML =
             '<div class="text-danger">Please enter a number.</div>';
-          return;
         }
         let i = "";
         let output = "";
         for (i = 1; i <= imageCount; i++) {
           const res = await fetch("https://dog.ceo/api/breeds/image/random");
           const data = await res.json();
-          output += `<img src="${data.message}">`;
+          output += `<img src="${data.message}" class="img-fluid mb-3">`;
         }
         document.querySelector("#showdata").innerHTML = output;
       }
