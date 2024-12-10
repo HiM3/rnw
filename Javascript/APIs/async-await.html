@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <button>Image Generator</button>
     <script>
         async function show() {
-            const res = await fetch('https://dummyjson.com/users')
+            const res = await fetch('https://dog.ceo/api/breeds/image/random')
             const data = await res.json()
             console.log(res);
-            console.table(data.users)
-
+            console.table(data.products)
         }show()
     </script>
 </body>
