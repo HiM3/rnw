@@ -14,18 +14,17 @@
   <body>
     <div class="container my-5">
       <h1 class="text-center mb-4">IMDB Top 100 Movies</h1>
-      <div id="showData" class="card"></div>
+      <div id="showData" class="row"></div>
     </div>
     <script>
       async function showdata() {
-        const url =
-          "https://imdb-com.p.rapidapi.com/title/get-taglines?tconst=tt0120338";
+        const url = "https://imdb-top-100-movies.p.rapidapi.com/";
         const options = {
           method: "GET",
           headers: {
             "x-rapidapi-key":
-              "489fbd565cmshcbb7e6520952591p16de7ejsnc8501eec60f1",
-            "x-rapidapi-host": "imdb-com.p.rapidapi.com",
+              "36f40f7c8fmshe95f7f03da443a5p184be9jsnca7168167d20",
+            "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
           },
         };
         let output = "";
@@ -34,9 +33,9 @@
           const result = await response.json();
           console.log(result);
           result.forEach((movie) => {
-            output += `<div class="col-md-4">
+            output += `<div class="col-md-4 mt-4">
               <div class="card h-100">
-                <img src="${movie.image}" class="card-img-top" alt="${movie.title}">
+                <img src="${movie.image}" class="card-img-top" alt="${movie.title} width="300px" height="300px">
                 <div class="card-body">
                   <h5 class="card-title">${movie.title}</h5>
                   <p class="card-text"><strong>Rank:</strong> ${movie.rank}</p>
