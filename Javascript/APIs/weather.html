@@ -64,9 +64,6 @@
               "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
             },
           });
-          if (!response.ok) {
-            alert("Failed to fetch weather data.");
-          }
           const data = await response.json();
           updateWeatherCard(data, unit);
         } catch (error) {
