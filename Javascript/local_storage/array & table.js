@@ -96,14 +96,13 @@ function update(index) {
       name: document.querySelector("#name").value,
       email: document.querySelector("#email").value,
       mobile: document.querySelector("#mobile").value,
-      city: document.querySelector('#city').value,
+      city: document.querySelector("#city").value,
       address: document.querySelector("#address").value,
-      gender: document.querySelector(
-        "#register input[type='radio']:checked"
-      ).value,
+      gender: document.querySelector("#register input[type='radio']:checked")
+        .value,
       hobbies: document.querySelector(
         "#register input[type='checkbox']:checked"
-      ).value
+      ).value,
     };
     userLocaldata.splice(index, 1, obj);
     localStorage.setItem("userdata", JSON.stringify(userLocaldata));

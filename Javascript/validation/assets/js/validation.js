@@ -95,3 +95,4 @@ register.addEventListener('submit', (event) => {
     }
 
 });
+    
