@@ -1,0 +1,155 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+
+
+.container1 {
+  margin-top: 20px;
+}
+
+.fa-solid {
+  color: rgb(177, 107, 107);
+}
+
+
+.carousel-item {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+.btn:hover {
+  background-color: rgb(238, 192, 100);
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  color: rgb(216, 136, 30);
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.fa-brands:hover {
+  color: orange;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.carousel-caption h3,
+.carousel-caption h1 {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+.hero-text h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .hero-text p {
+        font-size: 1.25rem;
+        color: #333;
+    }
+
+    .hero-text button {
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Estilos generales (por defecto) */
+body {
+font-size: 16px;
+}
+
+/* Para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+body {
+  font-size: 14px;
+}
+}
+
+/* Para pantallas con un ancho mínimo de 769px */
+@media (min-width: 769px) {
+body {
+  font-size: 18px;
+}
+}
+
+.custom-slider-container {
+width: 80%;
+max-width: 800px;
+margin: auto;
+position: relative;
+overflow: hidden;
+}
+
+.custom-slider {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.custom-slide {
+min-width: 100%;
+display: flex;
+flex-direction: column;
+align-items: end;
+}
+
+.custom-slide img {
+max-width: 100%;
+height: auto;
+}
+
+.custom-slide-caption {
+text-align: initial;
+margin-top: 10px;
+}
+
+.custom-pagination {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 10px;
+}
+
+.custom-pagination-dot {
+width: 12px;
+height: 12px;
+background-color: #ccc;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.custom-pagination-dot.active {
+background-color: #007bff;
+}
