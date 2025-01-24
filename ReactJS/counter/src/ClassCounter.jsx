@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 
 class ClassCounter extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      count: 0, // Initial count state
+      count: 0,
     };
   }
-
-  // Increment function
   increment = () => {
     this.setState({ count: this.state.count + 1 });
   };
-
-  // Decrement function with condition in one line
   decrement = () => {
     this.setState((dec) => ({
       count: dec.count > 0 ? dec.count - 1 : 0,
