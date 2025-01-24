@@ -25,10 +25,10 @@ class ClassCounter extends Component {
       <div className="text-center mt-5">
         <h1>ClassCounter: {this.state.count}</h1>
         <button onClick={this.increment} className="btn btn-primary m-2">
-          Increment
+          +
         </button>
         <button onClick={this.decrement} className="btn btn-danger m-2">
-          Decrement
+          -
         </button>
       </div>
     );
