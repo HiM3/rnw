@@ -23,6 +23,7 @@ const Userformgetinput = () => {
   }
   return (
     <>
+    <h1>React form Onchange</h1>
       <form
         action="post"
         onSubmit={submitUser}
