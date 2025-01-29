@@ -107,13 +107,13 @@ const Userformgetinput = () => {
         <button type="submit" className="mt-4 btn btn-success form-control">
           Submit
         </button>
-      </form>
       {user.username && <span>Username: {user.username}</span>} <br />
       {user.email && <span>Email: {user.email}</span>} <br />
       {user.number && <span>Number: {user.number}</span>} <br />
       {user.city && <span>City: {user.city}</span>} <br />
       {user.gender && <span>Gender: {user.gender}</span>} <br />
       {user.hobbies && <span>Hobbies: {user.hobbies.join(",")}</span>}
+      </form>
     </>
   );
 };
