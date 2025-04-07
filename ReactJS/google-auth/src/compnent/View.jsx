@@ -13,8 +13,8 @@ const View = () => {
     dispatch(viewFeedback());
   }, [dispatch]);
   async function handleDelete(id) {
-    if(confirm("Do you want to delete the data")){
-      dispatch(deleteFeedback(id))
+    if (confirm("Do you want to delete the data")) {
+      dispatch(deleteFeedback(id));
     }
   }
   return (
@@ -31,27 +31,28 @@ const View = () => {
             </tr>
           </thead>
           <tbody>
-            {feedbacklist&&feedbacklist.map((feedbacks, index) => (
-              <tr key={feedbacks.id}>
-                <td>{index + 1}</td>
-                <td>{feedbacks.rating}</td>
-                <td>{feedbacks.feedback}</td>
-                <td>
-                  <NavLink
-                    to={`/update-user/${feedbacks.id}`}
-                    className="btn btn-warning btn-sm me-2"
-                  >
-                    <FaPen />
-                  </NavLink>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => handleDelete(feedbacks.id)}
-                  >
-                    <MdDelete />
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {feedbacklist &&
+              feedbacklist.map((feedbacks, index) => (
+                <tr key={feedbacks.id}>
+                  <td>{index + 1}</td>
+                  <td>{feedbacks.rating}</td>
+                  <td>{feedbacks.feedback}</td>
+                  <td>
+                    <NavLink
+                      to={`/update-user/${feedbacks.id}`}
+                      className="btn btn-warning btn-sm me-2"
+                    >
+                      <FaPen />
+                    </NavLink>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => handleDelete(feedbacks.id)}
+                    >
+                      <MdDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
