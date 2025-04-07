@@ -16,8 +16,8 @@ const View = () => {
     if(confirm("Do you want to delete the data")){
       dispatch(deleteFeedback(id))
     }
-  }
-  const filter = 
+  // }
+  // const filter = 
   return (
     <>
       <div className="container mt-4">
