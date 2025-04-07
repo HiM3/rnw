@@ -17,7 +17,6 @@ const View = () => {
       dispatch(deleteFeedback(id))
     }
   }
-  const filter = 
   return (
     <>
       <div className="container mt-4">
