@@ -23,7 +23,7 @@ const Book = mongoose.model("Book", bookSchema);
 app.post("/api/books", async (req, res) => {
   const { title, author, price, category } = req.body;
   if (!title || !author || !price || !category) {
-    return res.status(400).json({ success: false, message: "All fields required" });
+    return res.json({ success: false, message: "All fields required" });
   }
 
   await Book.create({ title, author, price, category });
@@ -40,7 +40,7 @@ app.get("/api/books/:id", async (req, res) => {
     const book = await Book.findById(req.params.id);
     res.json({ success: true, book });
   } catch (err) {
-    res.status(404).json({ success: false, message: "Book not found" });
+    res.json({ success: false, message: "Book not found" });
   }
 });
 
@@ -52,7 +52,7 @@ app.put("/api/books", async (req, res) => {
     await Book.findByIdAndUpdate(id, { title, author, price, category });
     res.json({ success: true, message: "Book updated successfully" });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Failed to update" });
+    res.json({ success: false, message: "Failed to update" });
   }
 });
 
@@ -61,8 +61,8 @@ app.delete("/api/books/:id", async (req, res) => {
     await Book.findByIdAndDelete(req.params.id);
     res.json({ success: true, message: "Book deleted successfully" });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Failed to delete" });
+    res.json({ success: false, message: "Failed to delete" });
   }
 });
 
-app.listen(PORT, () => console.log(`🚀 Server running: http://localhost:${PORT}/api/books`));
+app.listen(PORT, () => console.log(`🚀http://localhost:${PORT}/api/books`));
