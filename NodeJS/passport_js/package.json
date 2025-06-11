@@ -1,0 +1,19 @@
+{
+  "name": "mern-admin-panel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "adminPanel": "cd admin-panel && npm start",
+    "server": "cd server && npm start",
+    "dev": "concurrently \"npm run adminPanel\" \"npm run server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "express-session": "^1.18.1",
+    "nodemailer": "^7.0.3"
+  }
+}
